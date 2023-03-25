@@ -9,9 +9,8 @@ validations
 
 THEN,
 Implement the following User Stories ("As A User" == AAU):
-
-AAU, I want to view a list of all flights (index view) that displays each flight's airline, flight no., and departure date/time
-AAU, I want to create flights by entering the information on a page (new view) that has a form and submitting it
+(index view) displays each flight's airline, flight no., and departure date/time
+(new view) create flights by entering the information on a page (new view) that has a form and submitting it
 
 */
 
@@ -23,8 +22,7 @@ let destinationSchema = new Schema({
     airport: {
         type: String,
         enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
-    },
-    arrival: Date
+    }
 })
 
 //include the destination schema before flightSchema
@@ -44,9 +42,9 @@ const flightSchema = new Schema({
         type: Date,
         default: function () {
             let date = new Date();
-            let day = day.getDate();
-            let month = day.getMonth();
-            let year = day.getFullYear();
+            let day = date.getDate();
+            let month = date.getMonth();
+            let year = date.getFullYear();
             let result = new Date(year + 1, month, day);
             // year + 1?
             return result;
@@ -56,6 +54,7 @@ const flightSchema = new Schema({
             enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
         },
         destinations: [destinationSchema]
+        //destination: [destinationSchema]
     }
 })
 
@@ -68,3 +67,5 @@ const flightSchema = new Schema({
 // })
 
 module.exports = mongoose.model('Flight', flightSchema);
+
+// module.exports = Flight
