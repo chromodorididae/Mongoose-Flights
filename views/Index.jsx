@@ -37,12 +37,13 @@ function Index (props) {
                 <br />
                 <li>Airport</li>
             </ul>
-            <strong>
-            <div style={{textSize: '25pt', textAlign: 'center'}}>
-            <a href="/flights/new"><strong>Book a Flight</strong></a></div></strong>
-            
+           
 
             </body>
+            
+            <div style={{textSize: '20pt', textAlign: 'center'}}>
+            <a href="/flights/new">Book a Flight</a></div>
+            
         </div>
     );
 }

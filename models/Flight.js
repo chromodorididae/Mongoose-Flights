@@ -22,7 +22,8 @@ let destinationSchema = new Schema({
     airport: {
         type: String,
         enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
-    }
+    },
+    arrival: Date
 })
 
 //include the destination schema before flightSchema

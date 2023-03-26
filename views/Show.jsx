@@ -2,16 +2,14 @@
 
 import React from 'react';
 
-const Flight = require('../models/Flight');
-
-function New (props) {
+function Show (props) {
     return (
         <div>
-            <title>New View</title>
+            <title>Show View</title>
             <body style={{color: 'black', backgroundColor: 'lightgray', textAlign: 'center', padding: '50px'}}>
-            <h1 style={{textAlign: 'center', }}>Book a Flight</h1>
+            <h1 style={{textAlign: 'center', }}>Show View</h1>
 
-            <ul style={{listStyle: 'none', fontSize:'25pt', textAlign:'center', marginRight: '30px'}}>
+            {/* <ul style={{listStyle: 'none', fontSize:'25pt', textAlign:'center', marginRight: '30px'}}>
                 <form>
                     <label>Airline </label>
                     <br />
@@ -30,7 +28,7 @@ function New (props) {
 
                     
                 </form>
-            </ul>
+            </ul> */}
 
             </body>
             <div style={{fontSize:'15pt', textAlign: 'center'}}>
@@ -41,4 +39,4 @@ function New (props) {
 }
 
 
-module.exports = New;
+module.exports = Show;

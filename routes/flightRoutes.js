@@ -11,17 +11,21 @@ const flightController = require('../controllers/flightController');
 
 // router.get('/', flightController.index);
 
-router.get('/new', (req, res) => {
-    res.render('New')
+router.get('/', (req, res) => {
+    res.render('Flight')
     // res.send('Hello World')
 });
+
+router.get('/New', (req, res) => {
+    res.render('New')
+})
 
 
 // // Setup a "new" route for creating logs
 // // router.get('/new', flightController.new)
 // router.get('/new', (req, res) => {
 //     res.render('New')
-// }) //New: step 13 - MOVE TO SERVER?
+// })
 
 // // Setup a "clear" route for removing all data from logs collection
 // router.delete('/clear', flightController.clear)
