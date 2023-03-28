@@ -1,4 +1,7 @@
-/* list of all flights (index view) that displays each flight's airline, flight no., and departure date/time */
+/* 1. show details/props of specific flight 
+2. add a destination to the flight, including its arrival date/time and one of the established airport codes
+3. show list of this flight's destinations (airport and arrival) 
+*/
 
 import React from 'react';
 
@@ -9,6 +12,15 @@ function Show (props) {
             <body style={{color: 'black', backgroundColor: 'lightgray', textAlign: 'center', padding: '50px'}}>
             <h1 style={{textAlign: 'center', }}>Show View</h1>
 
+            <ol>
+                <li>Show details of specific flight</li>
+                <li>
+                    Add a destination to the flight, including its arrival date/time and one of the established airport codes
+                </li>
+                <li>
+                    Show list of this flight's destinations (airport and arrival) 
+                </li>
+            </ol>
             {/* <ul style={{listStyle: 'none', fontSize:'25pt', textAlign:'center', marginRight: '30px'}}>
                 <form>
                     <label>Airline </label>
@@ -29,6 +41,7 @@ function Show (props) {
                     
                 </form>
             </ul> */}
+            
 
             </body>
             <div style={{fontSize:'15pt', textAlign: 'center'}}>

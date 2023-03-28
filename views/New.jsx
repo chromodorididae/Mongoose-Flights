@@ -7,12 +7,16 @@ const Flight = require('../models/Flight');
 function New (props) {
     return (
         <div>
+            <div style={{fontSize:'15pt', textAlign: 'center'}}>
+            <a href="/flight">Home</a>
+            </div>
+
             <title>New View</title>
             <body style={{color: 'black', backgroundColor: 'lightgray', textAlign: 'center', padding: '50px'}}>
             <h1 style={{textAlign: 'center', }}>Book a Flight</h1>
 
             <ul style={{listStyle: 'none', fontSize:'25pt', textAlign:'center', marginRight: '30px'}}>
-                <form>
+                <form action ="/flight" method="POST" >
                     <label>Airline </label>
                     <br />
                     <input type="text" name="airline" value={props.airline} onChange={props.handleInputChange} />
@@ -30,12 +34,13 @@ function New (props) {
 
                     
                 </form>
+
+                    
+
             </ul>
 
             </body>
-            <div style={{fontSize:'15pt', textAlign: 'center'}}>
-            <a href="/">Back</a>
-            </div>
+            
         </div>
     );
 }
