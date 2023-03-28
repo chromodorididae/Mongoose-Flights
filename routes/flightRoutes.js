@@ -19,10 +19,12 @@ router.delete('/:id', flightController.delete)
 router.put('/:id', flightController.update)
 // SAVE FLIGHT DATA
 router.post('/', flightController.create);
+
+router.get('/:id', flightController.show); 
+
 //EDIT
 router.get('/:id/edit', flightController.edit)
 // SHOW FLIGHT DETAILS
-router.get('/:id', flightController.show); 
 
 // router.get('/', (req, res) => {
 //     res.render('Flight')

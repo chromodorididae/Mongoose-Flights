@@ -1,52 +1,50 @@
 /* 1. show details/props of specific flight 
 2. add a destination to the flight, including its arrival date/time and one of the established airport codes
-3. show list of this flight's destinations (airport and arrival) 
+3. MAP : show list of this flight's destinations (airport and arrival) 
 */
 
+/*
+let destinationSchema = new Schema({
+    airport: {
+        type: String,
+        enum: ['AUS', 'DAL', 'LAX', 'SAN', 'SEA']
+    },
+    arrival: Date
+})
+*/
+
+// departureDate, arrivalDate = values stored in New
+
 import React from 'react';
+
+// const Flight = require('../models/Flight');
+// const Destination = require('../models/Destination');
 
 function Show (props) {
     return (
         <div>
             <title>Show View</title>
-            <body style={{color: 'black', backgroundColor: 'lightgray', textAlign: 'center', padding: '50px'}}>
+            <a href="/flight">Back to Flights</a>
+            <body style={{color: 'black', backgroundColor: 'lightgray', textAlign: 'center', padding: '30px'}}>
             <h1 style={{textAlign: 'center', }}>Show View</h1>
 
-            <ol>
-                <li>Show details of specific flight</li>
+            <ul>
                 <li>
-                    Add a destination to the flight, including its arrival date/time and one of the established airport codes
+                    Airline: {props.flights.airline}
                 </li>
                 <li>
-                    Show list of this flight's destinations (airport and arrival) 
+                    Flight Number: {props.flights.flightNo}
                 </li>
-            </ol>
-            {/* <ul style={{listStyle: 'none', fontSize:'25pt', textAlign:'center', marginRight: '30px'}}>
-                <form>
-                    <label>Airline </label>
-                    <br />
-                    <input type="text" name="airline" value={props.airline} onChange={props.handleInputChange} />
-                    <br /><br />
-                    <label>Flight Number </label><br />
-                    <input type="text" name="flightNo" value={props.flightNo} onChange={props.handleInputChange} />
-                    <br /><br />
-                    <label>Departure Date </label><br />
-                    <input type="date" name="departureDate" value={props.departureDate} onChange={props.handleInputChange} />
-                    <br /><br />
-                    <label>Return Date </label><br />
-                    <input type="date" name="returnDate" value={props.returnDate} onChange={props.handleInputChange} />
-                    <br />
-                    <button type="submit">Submit</button>
+                <li>
+                    Departure: {props.flights.departs.toDateString()}
+                </li>
+                {/* arrival is part of destinations */}
+                {/* input field in show page */}
+                {/* map through destinations */}
+                {/* { new route and new controller - add destination - get ID for flight, push item into destinations array, mongodb method} */}
+            </ul>
+        </body>
 
-                    
-                </form>
-            </ul> */}
-            
-
-            </body>
-            <div style={{fontSize:'15pt', textAlign: 'center'}}>
-            <a href="/">Back</a>
-            </div>
         </div>
     );
 }

@@ -9,7 +9,7 @@ function Index (props) {
             <div style={{textSize: '20pt', textAlign: 'center'}}>
             <a href="/flight/new">Book a Flight</a></div>
 
-            <body style={{color:'black', backgroundColor: 'lightgray', padding: '50px'}}>
+            <body style={{color:'black', backgroundColor: 'lightgray', padding: '30px'}}>
                 <title>Index View</title>
             <h1 style={{textAlign: 'center'}}>List of All Flights</h1>
 
@@ -18,7 +18,14 @@ function Index (props) {
                         <li key={index}>
                             <a href={`/flight/${flights._id}`}><strong>{flights.airline}
                             <br />
-                            {flights.flightNo}</strong></a>
+                            {flights.flightNo}</strong>
+                            {/* ADD DEPARTS AND ARRIVAL */}
+                            {/* {flights.departs}
+                            {flights.arrival} */}
+                            
+                            {/* departureDate, returnDate */}
+                            
+                            </a>
                         </li>
                     )}
                 </ul>

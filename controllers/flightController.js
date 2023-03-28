@@ -15,7 +15,12 @@ module.exports.index = async (req, res) => {
 
 //get /flights/new
 module.exports.new = async (req, res) => {
-    res.render('New')
+    const newFlight = new Flight();
+	// Obtain the default date
+	const dt = newFlight.departs;
+	// Format the date for the value attribute of the input
+	const departsDate = dt.toISOString().slice(0, 16);
+	res.render('New', {departsDate});
 }
 
 module.exports.delete = async (req, res) => {
@@ -61,9 +66,11 @@ module.exports.edit = async (req, res) => {
 }
 
 module.exports.show = async (req, res) => {
+    console.log('working')
     try {
         const flights = await Flight.findById(req.params.id);
-        res.render('Show', { flight })
+        console.log(flights)
+        res.render('Show', { flights:flights })
     }
     catch (err) {
         console.log(err);
