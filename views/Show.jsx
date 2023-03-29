@@ -18,9 +18,9 @@ let destinationSchema = new Schema({
 import React from 'react';
 
 // const Flight = require('../models/Flight');
-// const Destination = require('../models/Destination');
 
 function Show (props) {
+    console.log('show working')
     return (
         <div>
             <title>Show View</title>
@@ -35,15 +35,46 @@ function Show (props) {
                 <li>
                     Flight Number: {props.flights.flightNo}
                 </li>
+                <li>
+                    {/* Airport: {props.flights.airport} */}
+                    {/* not in MongoDB - access from schema */}
+                </li>
                 
             </ul>
 
-        <h3 style={{textAlign: 'center'}}>arrival time below</h3>
         
+        
+                {/* <input type="submit" value="Submit" /> */}
+            <div>
+                <h3 style={{textAlign: 'center'}}>arrival time below, map through destination schema within flight schema (contains airport and arrival props)</h3>
+                {/* <form action={`/`}>
+
+                </form> */}
+
+{/* <ul style={{listStyle: 'none', paddingLeft:'0px', fontSize: '25px'}}>
+                    {props.flight.destinations.map((flights, index) => 
+                        <li key={index}>
+                            <strong>{flights.destinations.airport}
+                            <br />
+                            {flights.destinations.flightNo}</strong>
+                            <br />
+                            {flights.destinations.arrival.toString()}
+                            <br />
+                            <br /><br />
+                        </li>
+                        
+                    )}
+                </ul> */}
+                    
+            </div>
+
+
         {/* <form action={`flight/${props.flight._id/destinations}`} method="post"> */}
-        <form>
-        <h3>Add a Destination:</h3>
-        <select name="airport" value={props.airport}>
+        <form action={`/flight/${props.flights._id}?_method=POST`} method="post">
+            <br /><br />
+            <label>Add a Destination: </label>
+            <br />
+            <select name="airport" value={props.airport}>
                 <br />
                     <option>AUS</option>
                     <option>DAL</option>
@@ -51,7 +82,7 @@ function Show (props) {
                     <option>SAN</option>
                     <option>SEA</option>
                     </select>
-                    <br />
+                    <br /><br />
                     <button>Add</button>
         </form>
 
@@ -59,14 +90,12 @@ function Show (props) {
 
 
 
-            {/* DESTINATION ARRAY AND ARRIVAL TIME */}
         </body>
 
         <br />
-        {/* <form action ="/flight" method="POST" > */}
-        <form action={`/flight/${props.flights._id}?_method="DELETE"`} method="POST"><button>Delete</button></form> {""}
+        <form action={`/flight/${props.flights._id}?_method=DELETE`} method="POST"><button>Delete</button></form> {""}
         <br />
-        <button type="submit">Submit</button>
+        <button type="submit">Submit Changes</button>
         </div>
     );
 }
