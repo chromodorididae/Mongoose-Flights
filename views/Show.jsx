@@ -28,23 +28,45 @@ function Show (props) {
             <body style={{color: 'black', backgroundColor: 'lightgray', textAlign: 'center', padding: '30px'}}>
             <h1 style={{textAlign: 'center', }}>Show View</h1>
 
-            <ul>
+            <ul style={{listStyle: 'none', textAlign: 'center'}}>
                 <li>
                     Airline: {props.flights.airline}
                 </li>
                 <li>
                     Flight Number: {props.flights.flightNo}
                 </li>
-                <li>
-                    Departure: {props.flights.departs.toDateString()}
-                </li>
-                {/* arrival is part of destinations */}
-                {/* input field in show page */}
-                {/* map through destinations */}
-                {/* { new route and new controller - add destination - get ID for flight, push item into destinations array, mongodb method} */}
+                
             </ul>
+
+        <h3 style={{textAlign: 'center'}}>arrival time below</h3>
+        
+        {/* <form action={`flight/${props.flight._id/destinations}`} method="post"> */}
+        <form>
+        <h3>Add a Destination:</h3>
+        <select name="airport" value={props.airport}>
+                <br />
+                    <option>AUS</option>
+                    <option>DAL</option>
+                    <option>LAX</option>
+                    <option>SAN</option>
+                    <option>SEA</option>
+                    </select>
+                    <br />
+                    <button>Add</button>
+        </form>
+
+
+
+
+
+            {/* DESTINATION ARRAY AND ARRIVAL TIME */}
         </body>
 
+        <br />
+        {/* <form action ="/flight" method="POST" > */}
+        <form action={`/flight/${props.flights._id}?_method="DELETE"`} method="POST"><button>Delete</button></form> {""}
+        <br />
+        <button type="submit">Submit</button>
         </div>
     );
 }

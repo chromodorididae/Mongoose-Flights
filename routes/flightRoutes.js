@@ -26,6 +26,13 @@ router.get('/:id', flightController.show);
 router.get('/:id/edit', flightController.edit)
 // SHOW FLIGHT DETAILS
 
+//ADD DESTINATION ROUTE:
+// router.post('/:id'/destinations', flightController.createDestinations)
+
+
+
+//new route to create destination on show page
+
 // router.get('/', (req, res) => {
 //     res.render('Flight')
 //     // res.send('Hello World')

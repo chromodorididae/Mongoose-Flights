@@ -16,22 +16,27 @@ function Index (props) {
             <ul style={{listStyle: 'none', paddingLeft:'0px', fontSize: '25px'}}>
                     {props.flights.map((flights, index) => 
                         <li key={index}>
-                            <a href={`/flight/${flights._id}`}><strong>{flights.airline}
+                            <strong>{flights.airline}
                             <br />
                             {flights.flightNo}</strong>
+                            <br />
+                            {flights.departs.toString()}
+                            <br />
+                            <a href={`/flight/${flights._id}`}>Details</a>
+                            <br /><br />
+                            
+                            
+
                             {/* ADD DEPARTS AND ARRIVAL */}
                             {/* {flights.departs}
                             {flights.arrival} */}
-                            
                             {/* departureDate, returnDate */}
-                            
-                            </a>
                         </li>
                     )}
                 </ul>
             
 
-
+                
             </body>
             
             

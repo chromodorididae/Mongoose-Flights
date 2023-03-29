@@ -54,8 +54,12 @@ function New (props) {
                     <br /><br />
                     {/* <label>Return Date </label><br /> */}
                     {/* <input type="date" name="returnDate" value={props.returnDate} onChange={props.handleInputChange} /> */}
-                    
+
+                    <label>Departure Time</label>
                     <br />
+                    <input type="time" name="departureTime" value={props.departureTime} onChange={props.handleInputChange} />
+                    
+
                     <button type="submit">Submit</button>
 
                     
